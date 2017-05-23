@@ -1,0 +1,6 @@
+#每次都忽略的文件&文件夹
+
+# target 文件夹 maven项目每次install都会生成的
+
+.idea/workspace.xml
+target/
