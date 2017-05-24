@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="USER">
+    <resultMap id="BaseResultMap" type="com.app.bean.User">
+        <result column="id" jdbcType="Integer"/>
+        <result column="name" javaType="VARCHAR"/>
+        <result column="password" javaType="VARCHAR"/>
+    </resultMap>
+    <sql id="baseColumns">
+        ID, NAME, PASSWORD
+    </sql>
+    <select id="getById" parameterType="java.lang.Integer" resultType="com.app.bean.User">
+        SELECT
+        <include refid="baseColumns"/>
+        WHERE ID = #{id}#
+    </select>
+    <insert id="insert" parameterType="com.app.bean.User" flushCache="true">
+        INSERT
+          INTO
+            USER (<include refid="baseColums"/>)
+        VALUE (#{id}, #{name}, #{passowrd})
+    </insert>
+    <update id="update" parameterType="com.app.bean.User" flushCache="true">
+        UPDATE
+          USER
+          SET NAME = #{name}, PASSWORD = #{password}
+          WHERE ID = #{id}
+    </update>
+
+</mapper>
