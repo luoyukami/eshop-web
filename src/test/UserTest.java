@@ -19,13 +19,13 @@ public class UserTest {
         sqlSessionFactory = userTest.getSqlSessionFactory();
         if(null != sqlSessionFactory){
             SqlSession sqlSession = sqlSessionFactory.openSession();
-            User user = (User) sqlSession.selectOne("User.getById", 1);
+            User user = sqlSession.selectOne("User.getById", 1);
             System.out.print(user.toString());
             sqlSession.close();
         }
     }
 
-    public SqlSessionFactory getSqlSessionFactory(){
+    private SqlSessionFactory getSqlSessionFactory(){
         String resourse = "mybatis-config.xml";
         InputStream inputStream;
         SqlSessionFactory sqlSessionFactory;

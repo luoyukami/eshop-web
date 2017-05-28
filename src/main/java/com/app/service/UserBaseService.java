@@ -6,10 +6,13 @@ import com.app.dao.impl.UserDAOImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 @Service("userBaseService")
 public class UserBaseService {
 
 
+    @Resource(name = "userDAO")
     private UserDAO userDAO;
 
     public boolean userLogin(User user) {

@@ -17,6 +17,7 @@
         <mybatis>3.4.1</mybatis>
         <druid>1.0.31</druid>
         <mysql>5.1.38</mysql>
+        <slf4j-api>1.7.21</slf4j-api>
     </properties>
 
     <dependencies>
@@ -100,6 +101,14 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql}</version>
         </dependency>
+
+        <!--slf4j实现包 日志 必须 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api}</version>
+        </dependency>
+
 
 
 

@@ -13,17 +13,17 @@ public class UserDAOImpl implements UserDAO {
     @Resource(name = "sqlSessionTemplate")
     private SqlSessionTemplate sqlSessionTemplate;
 
-    private String SQLMAP_SPACE = "USER.";
+    private String NAME_SPACE = "User.";
 
     public User getById(Integer id) {
-        return sqlSessionTemplate.selectOne(SQLMAP_SPACE + "getById", id);
+        return sqlSessionTemplate.selectOne(NAME_SPACE + "getById", id);
     }
 
     public int insert(User user) {
-        return sqlSessionTemplate.insert(SQLMAP_SPACE + "insert", user);
+        return sqlSessionTemplate.insert(NAME_SPACE + "insert", user);
     }
 
     public int update(User user) {
-        return sqlSessionTemplate.update(SQLMAP_SPACE + "update", user);
+        return sqlSessionTemplate.update(NAME_SPACE + "update", user);
     }
 }
