@@ -26,4 +26,8 @@ public class UserDAOImpl implements UserDAO {
     public int update(User user) {
         return sqlSessionTemplate.update(NAME_SPACE + "update", user);
     }
+
+    public int login(User user) {
+        return sqlSessionTemplate.selectOne(NAME_SPACE + "login", user);
+    }
 }

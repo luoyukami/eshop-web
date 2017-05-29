@@ -9,4 +9,6 @@ public interface UserDAO {
     int insert(User user);
 
     int update(User user);
+
+    int login(User user);
 }

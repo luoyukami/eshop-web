@@ -20,14 +20,19 @@
     <insert id="insert" flushCache="true">
         INSERT
           INTO
-            USER (<include refid="baseColumns"/>)
+            user (<include refid="baseColumns"/>)
         VALUE (#{id}, #{name}, #{passowrd})
     </insert>
     <update id="update" flushCache="true">
         UPDATE
-          USER
+          user
           SET NAME = #{name}, PASSWORD = #{password}
           WHERE ID = #{id}
     </update>
+    <select id="login" resultType="int">
+        SELECT COUNT(1)
+        FROM user
+        WHERE name=#{name} AND password=#{password}
+    </select>
 
 </mapper>
