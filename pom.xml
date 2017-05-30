@@ -10,14 +10,17 @@
 
     <properties>
         <junit>4.12</junit>
-        <log4j>1.2.17</log4j>
+        <log4j>1.2.14</log4j>
+        <log4j-slf4j-impl>2.8.2</log4j-slf4j-impl>
         <spring>4.3.8.RELEASE</spring>
         <spring-support>2.0.8</spring-support>
         <spring-dao>2.0.8</spring-dao>
         <mybatis>3.4.1</mybatis>
         <druid>1.0.31</druid>
         <mysql>5.1.38</mysql>
-        <slf4j-api>1.7.21</slf4j-api>
+        <velocity>1.7</velocity>
+        <slf4j-api>1.7.2</slf4j-api>
+        <slf4j-simple>1.7.2</slf4j-simple>
     </properties>
 
     <dependencies>
@@ -28,11 +31,11 @@
             <version>${junit}</version>
         </dependency>
         <!-- lo4j 日志打印、输出 -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>log4j</groupId>-->
+            <!--<artifactId>log4j</artifactId>-->
+            <!--<version>${log4j}</version>-->
+        <!--</dependency>-->
         <!-- spring 核心包 必须 -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -108,16 +111,73 @@
             <version>${mysql}</version>
         </dependency>
 
-        <!--slf4j实现包 日志 必须 -->
+        <!--slf4j包 日志 必须 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j-api}</version>
         </dependency>
+        <!-- slf4j实现包 日志 必须 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple}</version>
+        </dependency>
 
 
+        <!-- velocity jar包 必须 -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>${velocity}</version>
+        </dependency>
+        <!-- velocity-tools 必须-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-tools</artifactId>
+            <version>2.0</version>
+        </dependency>
 
 
     </dependencies>
+
+    <build>
+        <finalName>eshop-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <configuration>
+                    <stopPort>9988</stopPort>
+                    <stopKey>foo</stopKey>
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                    <connectors>
+                        <!--<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">-->
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <webAppConfig>
+                        <contextPath>/</contextPath>
+                        <defaultsDescriptor></defaultsDescriptor>
+                    </webAppConfig>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <!-- <extdirs>${basedir}/WebRoot/WEB-INF/lib</extdirs> -->
+                        <!--<extdirs>${basedir}/src/main/webapp/WEB-INF/lib</extdirs>-->
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
