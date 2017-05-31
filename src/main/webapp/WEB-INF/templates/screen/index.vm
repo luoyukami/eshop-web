@@ -1,0 +1,8 @@
+<html>
+<head>
+    <title>eshop-demo-首页</title>
+</head>
+<body>
+hello #if("" != "$user.name"),$user.name#else <a href="/user/login">,login</a>#end
+</body>
+</html>

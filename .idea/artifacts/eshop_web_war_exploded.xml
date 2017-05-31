@@ -34,6 +34,7 @@
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.2" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.2" />
+          <element id="library" level="project" name="Maven: velocity-tools:velocity-tools-generic:1.4" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="eshop-web/web/Web" />

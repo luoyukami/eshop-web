@@ -34,7 +34,7 @@ public class UserAction {
             return "/user/login";
         } else {
             model.addAttribute("user", user);
-            return "index";
+            return "/index";
         }
     }
 
