@@ -18,6 +18,7 @@
         <druid>1.0.31</druid>
         <mysql>5.1.38</mysql>
         <slf4j-api>1.7.21</slf4j-api>
+        <freemarker>2.3.23</freemarker>
     </properties>
 
     <dependencies>
@@ -114,6 +115,12 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j-api}</version>
         </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker}</version>
+        </dependency>
+
 
 
 
