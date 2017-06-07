@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="eshop-web:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="eshop-web:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/eshop_web_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
@@ -35,6 +35,10 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.2" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.2" />
           <element id="library" level="project" name="Maven: velocity-tools:velocity-tools-generic:1.4" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.21" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="eshop-web/web/Web" />

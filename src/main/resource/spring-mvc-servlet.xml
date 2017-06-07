@@ -18,7 +18,7 @@
         <property name="suffix">
             <value>.ftl</value>
         </property>
-        <property name="contentType" value="text/html;charset=UTF-8"></property>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
     </bean>
 
 </beans>

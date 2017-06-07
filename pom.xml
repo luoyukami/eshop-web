@@ -109,11 +109,17 @@
             <version>${mysql}</version>
         </dependency>
 
-        <!--slf4j实现包 日志 必须 -->
+        <!--slf4j 日志 必须 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j-api}</version>
+        </dependency>
+        <!-- slf4j日志实现包 必须-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.21</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>

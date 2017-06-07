@@ -38,6 +38,11 @@ public class UserAction {
         }
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(@ModelAttribute User user, ModelMap model) {
+        return "/user/login";
+    }
+
     @RequestMapping(value = "/hello")
     public String hello() {
         return "/index";
