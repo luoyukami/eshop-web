@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>eshop-demo-首页</title>
+</head>
+<body>
+hello #if("" != ${user.name}),${user.name},${user}#else <a href="/user/login">,login</a>#end
+<form id='userLogin' name='userLogin' action='/user/login.json' method="post">
+    <label>用户名：<input id='name' name='name'></label>
+    <label>密码：<input id='password' name='password' type="password"></label>
+    <label><input type="submit" value="登陆"></label>
+</form>
+</body>
+</html>
