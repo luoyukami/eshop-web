@@ -5,3 +5,4 @@
 .idea/workspace.xml
 target/
 out/
+scr/main/java/resource/conf/server.properties
