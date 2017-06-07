@@ -5,4 +5,4 @@
 .idea/workspace.xml
 target/
 out/
-src/main/resource/conf/server.properties
+*.properties
